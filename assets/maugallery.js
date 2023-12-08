@@ -227,20 +227,21 @@
       });
       var tagsRow = `<ul class="my-4 tags-bar nav nav-pills">${tagItems}</ul>`;
 
-      if (position === "bottom") {
-        gallery.append(tagsRow);
-      } else if (position === "top") {
-        gallery.prepend(tagsRow);
-      } else {
-        console.error(`Unknown tags position: ${position}`);
-      }
-    },
-    filterByTag() {
-      if ($(this).hasClass("active-tag")) {
-        return;
-      }
-      $(".active-tag").removeClass("active active-tag");
-      $(this).addClass("active-tag");
+            if (position === "bottom") {
+                gallery.append(tagsRow);
+            } else if (position === "top") {
+                gallery.prepend(tagsRow);
+            } else {
+                console.error(`Unknown tags position: ${position}`);
+            }
+        },
+        filterByTag() {
+            if ($(this).hasClass("active-tag")) {
+                return;
+            }
+            $(".active-tag").removeClass("active active-tag");
+            $(this).addClass("active-tag");
+            $(this).addClass("active");
 
       var tag = $(this).data("images-toggle");
 
